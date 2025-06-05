@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald';
+}
+
+:root{
+    --bgColor : #22241a;
+    --bgInput : #bbbe9a;
+
+    --fntSpeccial: #a3bc51;
+    --fntPrincipal: #22241a;
+    --fntSecondary: #bbbe9a;
+    --fntLink: #5175bc;
+}
+
+/* :root{
+    --bgColor : #fff;
+    --bgInput : #fff;
+
+    --fntSpeccial: #000;
+    --fntPrincipal: #fff;
+    --fntSecondary: #888;
+    --fntLink: #0004ff;
+} */

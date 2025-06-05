@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:host {
+    background-color: var(--bgColor);
+    display: flex;
+    min-height: 100vh;
+    height: 100vh;
+    color: var(--fntPrincipal);
+    overflow: hidden;
+}
+
+:host > * {
+    flex: 1;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: var(--fntSpeccial);
+}
+
+p {
+    color: var(--fntSecondary);
+}
+
+a {
+    color: var(--fntLink);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: var(--bgColor);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    color: var(--fntPrincipal);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+}
+
+label > p {
+    color: var(--fntSpeccial);
+}
+
+input {
+    background-color: var(--bgInput);
+    border-radius: .2rem;
+    padding: .5rem;
+    border: 2px solid #444;
+    width: 100%;
+}
+
+input:hover, 
+input:focus {
+    outline: none;
+}
+
+input[type="submit"] {
+    padding: .4rem 4rem;
+    background-color: var(--fntSpeccial);
+    color: var(--fntPrincipal);
+    font-weight: bolder;
+    border: 2px solid var(--fntSpeccial);
+    transition: color .5s ease-in-out, background-color .5s ease-in-out;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--fntPrincipal);
+    color: var(--fntSpeccial);
+}
+
+
+@media (max-width: 768px) {
+    :host > *:first-child {
+        flex: 0.6;
+    }
+    
+    :host > *:last-child {
+        flex: 0.4;
+    }
+}
+
+@media (max-width: 480px) {
+    :host > *:first-child {
+        flex: 0.3;
+    }
+    
+    :host > *:last-child {
+        flex: 0.7;
+    }
+
+    form {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}
