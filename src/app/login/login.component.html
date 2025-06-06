@@ -4,14 +4,14 @@
     <form>
         <label>
             <p>Email address<p>
-            <input type="email" placeholder="ej: example@email.com">
+            <input [(ngModel)]="emailAddress" type="email" placeholder="ej: example@email.com" [ngModelOptions]="{standalone: true}" required>
         </label>
         <label>
             <p>Password</p>
-            <input type="password" placeholder="***">
+            <input [(ngModel)]="password" type="password" placeholder="***" [ngModelOptions]="{standalone: true}">
         </label>
         <a href="/login">Forgot password</a>
-        <input type="submit" value="Sing in">
+        <input type="submit" value="Sing in" (click)="this.login(this.emailAddress(), this.password())">
     </form>
     <p>
         Don't have an account?
