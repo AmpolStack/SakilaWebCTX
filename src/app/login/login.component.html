@@ -1,17 +1,23 @@
 <main>
     <h1>Welcome back</h1>
     <p>Please enter your details</p>
-    <form>
+    <form [formGroup]="loginForm" (submit)="login()">
         <label>
-            <p>Email address<p>
-            <input [(ngModel)]="emailAddress" type="email" placeholder="ej: example@email.com" [ngModelOptions]="{standalone: true}" required>
+            <p>Username<p>
+            <input type="text" placeholder="ej: Jhon Doe" formControlName="username">
+            @if (isInvalid('username', 'required')) {
+                <p id="sub-error">The username is required</p>
+            }
         </label>
         <label>
             <p>Password</p>
-            <input [(ngModel)]="password" type="password" placeholder="***" [ngModelOptions]="{standalone: true}">
+            <input type="password" placeholder="***" formControlName="password">
+            @if (isInvalid('password', 'required')) {
+                <p id="sub-error">The password is required</p>
+            }
         </label>
         <a href="/login">Forgot password</a>
-        <input type="submit" value="Sing in" (click)="this.login(this.emailAddress(), this.password())">
+        <input type="submit" value="Login" [disabled]="!loginForm.valid" [class.disable-but]="!loginForm.valid" >
     </form>
     <p>
         Don't have an account?

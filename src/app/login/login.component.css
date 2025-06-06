@@ -68,6 +68,10 @@ label > p {
     color: var(--fntSpeccial);
 }
 
+#sub-error {
+    color : #e74c4c;
+}
+
 input {
     background-color: var(--bgInput);
     border-radius: .2rem;
@@ -76,9 +80,25 @@ input {
     width: 100%;
 }
 
-input:hover, 
-input:focus {
+input:hover
+{
     outline: none;
+}
+
+form > .disable-but {
+    background-color: #666;
+    touch-action: none;
+    cursor: not-allowed;
+    color: var(--fntSecondary);
+    border-color: var(--fntSecondary);
+}
+
+form > .disable-but:hover {
+    background-color: #666;
+    touch-action: none;
+    cursor: not-allowed;
+    color: var(--fntSecondary);
+    border-color: var(--fntSecondary);
 }
 
 input[type="submit"] {
@@ -87,13 +107,17 @@ input[type="submit"] {
     color: var(--fntPrincipal);
     font-weight: bolder;
     border: 2px solid var(--fntSpeccial);
-    transition: color .5s ease-in-out, background-color .5s ease-in-out;
+    transition: color .5s ease-in-out, background-color .5s ease-in-out, scale .1s ease-in-out;
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, input[type="submit"]:focus {
     background-color: var(--fntPrincipal);
     color: var(--fntSpeccial);
+}
+
+input[type="submit"]:active, input[type="submit"]:focus {
+    scale: 0.95;
 }
 
 

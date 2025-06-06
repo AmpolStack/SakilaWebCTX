@@ -1,6 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthHandlerService } from '../auth-handler.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,16 +9,28 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  public emailAddress = signal<string>('');
-  public password = signal<string>('');
   private authService : AuthHandlerService = inject(AuthHandlerService);
+  private formBuilder = inject(FormBuilder);
+  public loginForm : FormGroup = this.formBuilder.group({
+    username : ['', Validators.required],
+    password : ['', Validators.required],
+  });
 
-  login(username: string, password: string) {
-    this.authService.ObtainAuthentication(username, password).subscribe({
+  public isInvalid(path : string, validType : string) : boolean{
+    let ent = this.loginForm.get(path);
+    if(!ent?.touched){
+      return false;
+    }
+    return ent?.hasError(validType);
+  }
+
+  public login() : void {
+    let usrnm: string = this.loginForm.get('username')?.value;
+    let pswd: string = this.loginForm.get('password')?.value;
+    this.authService.ObtainAuthentication(usrnm, pswd).subscribe({
       next: (response) => {
         if (response.success) {
-          console.log(response.data);
-          // Aquí puedes guardar el token o redirigir
+          console.log(response);
         } else {
           console.error('Error en login:', response.error);
         }
