@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { API_URL } from './app.config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthHandlerService {
-  private apiUrl: string = "http://localhost:8080";
-
-  constructor(private http: HttpClient) {}
+  private apiUrl : string = inject(API_URL);
+  private http : HttpClient = inject(HttpClient);
 
   public ObtainAuthentication(username: string, password: string): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/staff/open/obtainAuthentication`, {

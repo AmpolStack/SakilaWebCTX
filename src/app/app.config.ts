@@ -1,9 +1,10 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, InjectionToken, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
 
+export const API_URL = new InjectionToken<string>('BACKEND_URL')
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,7 +12,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     {
-      provide: 'API_URL',
+      provide: API_URL,
       useValue: 'http://localhost:8080'
     }
   ]

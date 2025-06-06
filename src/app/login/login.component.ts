@@ -1,21 +1,17 @@
-import { Component, Input, input, model, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { AuthHandlerService } from '../auth-handler.service';
-import { FormsModule } from '@angular/forms';
-import { interval } from 'rxjs';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-
   public emailAddress = signal<string>('');
   public password = signal<string>('');
-
-  constructor(private authService: AuthHandlerService) {
-  }
+  private authService : AuthHandlerService = inject(AuthHandlerService);
 
   login(username: string, password: string) {
     this.authService.ObtainAuthentication(username, password).subscribe({
