@@ -1,0 +1,11 @@
+<aside>
+    <h3>Most Searched Actors</h3>
+    <ul>
+        @for (item of itemList(); track $index) {
+            <li>
+                <h5>{{ item.name }}</h5>
+                <p>{{ item.description }}</p>
+            </li>
+        }
+    </ul>
+</aside>
