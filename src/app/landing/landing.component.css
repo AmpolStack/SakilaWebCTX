@@ -1,0 +1,143 @@
+:host{
+    padding: 4rem;
+    display: grid;
+    grid-template-areas: 
+    "aside-one main aside-two"
+    ". footer .";
+    justify-content: center;
+    align-items: start;
+    align-content: center;
+    gap: 4rem 2rem;
+    background-color: var(--bgColor);
+    color: var(--fntSpeccial);
+    min-height: 100vh;
+}
+
+.decorator{
+    color: var(--fntSubtitle);
+}
+
+*::selection{
+    background-color: var(--fntSubtitle);
+    color: #444;
+}
+
+main{
+    grid-area: main;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.aside-one{
+    grid-area: aside-one;
+}
+
+.aside-two{
+    grid-area: aside-two;
+}
+
+aside{
+    max-width: 20rem;
+}
+
+section > a{
+    align-self: center;
+}
+
+section{
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+section p{
+    /* background-color: blueviolet; */
+    max-width: 90%;
+    color: var(--fntSecondary);
+    font-weight:300;
+}
+
+section h2{
+    align-self: flex-start;
+}
+
+h1{
+    text-wrap: nowrap;
+    font-size: 7rem;
+}
+
+h3{
+    /* text-align: center; */
+    color: var(--fntSubtitle);
+    text-transform: uppercase;
+}
+
+nav{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10rem;
+}
+
+a{
+    text-transform: uppercase;
+    font-weight: bold; 
+}
+
+a{
+    background-color: #7a797919;
+    color: #6363d1;
+    padding: .2rem 1.5rem;
+    font-weight: bold;
+    margin: .5rem 0;
+    align-self: self-start;
+    border: 2px dashed transparent;
+    transition: color .5s ease-in-out, background-color .5s ease-in-out, scale .1s ease-in-out, border-color .5s ease-in-out;
+}
+
+a:hover{
+    border-color: #6363d1;
+    scale: 0.85;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer{
+    color: var(--fntSubtitle);
+    grid-area: footer;
+    text-align: center;
+    width: 100%;
+
+}
+
+main, section, footer{
+    max-width: 40rem;
+}
+
+.main-container{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem 0;
+}
+
+@media (max-width: 1200px) {
+    :host{
+        display: grid;
+        grid-template-areas: 
+        "main"
+        "aside-one"
+        "aside-two"
+        "footer";
+    }
+}
