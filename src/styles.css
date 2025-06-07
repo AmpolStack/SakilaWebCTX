@@ -19,6 +19,9 @@ body{
     --fntSelection: #444;
     --bgPhantom: #7a797919;
     --bgGradient: linear-gradient(337deg, rgba(34, 36, 26, 1) 0%, rgba(46, 48, 34, 1) 53%, rgba(34, 36, 26, 1) 100%);
+
+    --errorColor : #cd4141;
+    --successColor : #79a168;
 }
 
 /* :root{

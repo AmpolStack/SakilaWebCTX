@@ -1,1 +1,4 @@
-<router-outlet />
+@if (this.activePopUp() === true) {
+<app-pop-up-window [type]="defaulType" [content]="defaultContent" (isActive)="this.activePopUp.set($event)"></app-pop-up-window>
+}
+<router-outlet/>
