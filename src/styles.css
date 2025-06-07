@@ -13,8 +13,12 @@ body{
     --fntPrincipal: #22241a;
     --fntSecondary: #bbbe9a;
     --fntLink: #5175bc;
-
     --fntSubtitle: #d9855e;
+
+    --bgLink:  #6363d1;
+    --fntSelection: #444;
+    --bgPhantom: #7a797919;
+    --bgGradient: linear-gradient(337deg, rgba(34, 36, 26, 1) 0%, rgba(46, 48, 34, 1) 53%, rgba(34, 36, 26, 1) 100%);
 }
 
 /* :root{
@@ -25,4 +29,9 @@ body{
     --fntPrincipal: #fff;
     --fntSecondary: #888;
     --fntLink: #0004ff;
+    --fntSubtitle: #d9855e;
+
+    --bgLink:  var(--fntLink);
+    --fntSelection: #fff;
+    --bgPhantom: #9898983d;
 } */
