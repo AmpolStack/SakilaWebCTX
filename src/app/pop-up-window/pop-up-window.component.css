@@ -1,0 +1,73 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #68686845;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+h4 {
+    color: var(--fntSelection);
+    text-transform: uppercase;
+}
+
+p{
+    color: var(--fntSecondary);
+}
+
+button {
+    background-color: var(--fntSelection);
+    color: var(--fntSecondary);
+    border: 4px dashed var(--fntSelection);
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.2s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+button{
+    nav-index: -1;
+}
+
+button:hover,
+button:focus {
+    transform: scale(0.95);
+    background-color: var(--fntSecondary);
+    color: var(--fntSelection);
+}
+
+.window {
+    background-color: var(--principalColor);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.26);
+    padding: 1rem;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    aspect-ratio: 5 / 3;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 600px) {
+  .window {
+    width: 70%;
+  }
+}
+
+@media (min-width: 900px) {
+  .window {
+    width: 45%;
+  }
+}
