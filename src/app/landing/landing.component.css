@@ -1,5 +1,4 @@
 :host{
-    padding: 4rem;
     display: grid;
     grid-template-areas: 
     "aside-one main aside-two"
@@ -8,9 +7,14 @@
     align-items: start;
     align-content: start;
     gap: 4rem 4rem;
-    background-color: var(--bgColor);
+    background: var(--bgColor);
+    background: var(--bgGradient);
     color: var(--fntSpeccial);
     min-height: 100vh;
+}
+
+:host > *{
+    margin-top: 4rem;
 }
 
 .decorator{
@@ -19,7 +23,7 @@
 
 *::selection{
     background-color: var(--fntSubtitle);
-    color: #444;
+    color: var(--fntSelection);
 }
 
 main{
@@ -37,19 +41,8 @@ main{
     grid-area: aside-two;
 }
 
-aside{
-    /* background-color: #444; */
-    max-width: 20rem;
-}
-
 section > a{
     align-self: center;
-}
-
-ul{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
 }
 
 section{
@@ -76,12 +69,7 @@ h1{
     /* text-decoration:underline; */
     text-wrap: nowrap;
     font-size: 7rem;
-}
-
-h3{
-    /* text-align: center; */
-    color: var(--fntSubtitle);
-    text-transform: uppercase;
+    /* text-shadow: 0px 2px 1rem #00000067; */
 }
 
 nav{
@@ -99,8 +87,8 @@ a{
 }
 
 a{
-    background-color: #7a797919;
-    color: #6363d1;
+    background-color: var(--bgPhantom);
+    color: var(--bgLink);
     padding: .2rem 1.5rem;
     font-weight: bold;
     margin: .5rem 0;
@@ -109,12 +97,8 @@ a{
     transition: color .5s ease-in-out, background-color .5s ease-in-out, scale .1s ease-in-out, border-color .5s ease-in-out;
 }
 
-/* ul p{
-    color: var(--fntSecondary);
-} */
-
 a:hover, a:focus{
-    border-color: #6363d1;
+    border-color: var(--bgLink);
     scale: 0.85;
 }
 
@@ -129,6 +113,8 @@ footer{
     grid-area: footer;
     text-align: center;
     width: 100%;
+    background-color: var(--bgPhantom);
+    padding: 1.5rem 0;
 
 }
 
@@ -137,7 +123,7 @@ code{
 }
 
 strong{
-    background-color: #7a797919;
+    background-color: var(--bgPhantom);
 }
 
 main, section, footer{
@@ -169,15 +155,6 @@ main, section, footer{
     :host > *{
         max-width: 100%;
         /* background-color: #444; */
-    }
-
-    ul{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    ul > *{
-        flex: 1 0 10rem;
     }
 
 }

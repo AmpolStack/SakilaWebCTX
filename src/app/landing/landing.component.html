@@ -47,52 +47,8 @@
         </section>
     </div>
 </main>
-<aside class="aside-two">
-    <h3>Most rented Movies</h3>
-    <ul>
-        <li>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro iste reprehenderit provident nobis recusandae quidem, eius iusto architecto optio voluptates dolore. Ea, recusandae laboriosam excepturi libero consequuntur possimus a quas!</p>
-        </li>
-        <li>
-            <p>Cum ex quod culpa vel laudantium commodi, esse cupiditate, suscipit porro nulla itaque quisquam non nostrum error distinctio odio velit quos temporibus soluta numquam inventore obcaecati accusamus natus! Quaerat, quis!</p>
-        </li>
-        <li>
-            <p>Distinctio eligendi est consequatur eum sit necessitatibus maxime sint esse hic pariatur, quo iusto eos tempora architecto quam labore ad! Sint saepe molestias laudantium eos temporibus dolor necessitatibus veniam corrupti.</p>
-        </li>
-        <li>
-            <p>Harum, sequi deserunt vitae pariatur voluptatibus nostrum aspernatur modi nihil temporibus accusamus aliquam corrupti unde facilis porro optio totam cumque nobis quibusdam quaerat esse? Quibusdam accusamus quo provident quis nisi.</p>
-        </li>
-        <li>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro iste reprehenderit provident nobis recusandae quidem, eius iusto architecto optio voluptates dolore. Ea, recusandae laboriosam excepturi libero consequuntur possimus a quas!</p>
-        </li>
-        <li>
-            <p>Cum ex quod culpa vel laudantium commodi, esse cupiditate, suscipit porro nulla itaque quisquam non nostrum error distinctio odio velit quos temporibus soluta numquam inventore obcaecati accusamus natus! Quaerat, quis!</p>
-        </li>
-                <li>
-            <p>Distinctio eligendi est consequatur eum sit necessitatibus maxime sint esse hic pariatur, quo iusto eos tempora architecto quam labore ad! Sint saepe molestias laudantium eos temporibus dolor necessitatibus veniam corrupti.</p>
-        </li>
-    </ul>
-</aside>
-<aside class="aside-one">
-    <h3>Most Searched Actors</h3>
-    <ul>
-        <li>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro iste reprehenderit provident nobis recusandae quidem, eius iusto architecto optio voluptates dolore. Ea, recusandae laboriosam excepturi libero consequuntur possimus a quas!</p>
-        </li>
-        <li>
-            <p>Cum ex quod culpa vel laudantium commodi, esse cupiditate, suscipit porro nulla itaque quisquam non nostrum error distinctio odio velit quos temporibus soluta numquam inventore obcaecati accusamus natus! Quaerat, quis!</p>
-        </li>
-        <li>
-            <p>Distinctio eligendi est consequatur eum sit necessitatibus maxime sint esse hic pariatur, quo iusto eos tempora architecto quam labore ad! Sint saepe molestias laudantium eos temporibus dolor necessitatibus veniam corrupti.</p>
-        </li>
-        <li>
-            <p>Harum, sequi deserunt vitae pariatur voluptatibus nostrum aspernatur modi nihil temporibus accusamus aliquam corrupti unde facilis porro optio totam cumque nobis quibusdam quaerat esse? Quibusdam accusamus quo provident quis nisi.</p>
-        </li>
-        <li>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro iste reprehenderit provident nobis recusandae quidem, eius iusto architecto optio voluptates dolore. Ea, recusandae laboriosam excepturi libero consequuntur possimus a quas!</p>
-        </li>
-    </ul>
-</aside>
+<app-prominents-list class="aside-one" [title]="this.asidesContent[0].title" [itemList]="this.asidesContent[0].prominent"></app-prominents-list>
+<app-prominents-list class="aside-two" [title]="this.asidesContent[1].title" [itemList]="this.asidesContent[1].prominent"></app-prominents-list>
 <footer>
     By {{ '@Amapola' }} © 2024
 </footer>
