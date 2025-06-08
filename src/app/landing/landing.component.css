@@ -1,52 +1,50 @@
-:host{
+:host {
     display: grid;
-    grid-template-areas: 
-    "aside-one main aside-two"
-    ". footer .";
+    grid-template-areas:
+        "aside-one main aside-two"
+        ". footer .";
     justify-content: center;
     align-items: start;
     align-content: start;
     gap: 4rem 4rem;
-    background: var(--bgColor);
     background: var(--bgGradient);
     color: var(--fntSpeccial);
     min-height: 100vh;
 }
 
-:host > *{
+:host > * {
     margin-top: 4rem;
 }
 
-.decorator{
+.decorator {
     color: var(--fntSubtitle);
 }
 
-*::selection{
+*::selection {
     background-color: var(--fntSubtitle);
     color: var(--fntSelection);
 }
 
-main{
+main {
     grid-area: main;
     text-align: center;
     display: flex;
     flex-direction: column;
 }
 
-.aside-one{
+.aside-one {
     grid-area: aside-one;
 }
 
-.aside-two{
+.aside-two {
     grid-area: aside-two;
 }
 
-section > a{
+section > a {
     align-self: center;
 }
 
-section{
-    /* background-color: black; */
+section {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -54,25 +52,22 @@ section{
     align-items: center;
 }
 
-section p{
-    /* background-color: blueviolet; */
+section p {
     max-width: 90%;
     color: var(--fntSecondary);
-    font-weight:300;
+    font-weight: 300;
 }
 
-section h2{
+section h2 {
     align-self: flex-start;
 }
 
-h1{
-    /* text-decoration:underline; */
-    text-wrap: nowrap;
+h1 {
+    white-space: nowrap;
     font-size: 7rem;
-    /* text-shadow: 0px 2px 1rem #00000067; */
 }
 
-nav{
+nav {
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
@@ -81,56 +76,54 @@ nav{
     gap: 0 10rem;
 }
 
-a{
+a {
     text-transform: uppercase;
-    font-weight: bold; 
-}
-
-a{
+    font-weight: bold;
     background-color: var(--bgPhantom);
     color: var(--bgLink);
     padding: .2rem 1.5rem;
-    font-weight: bold;
     margin: .5rem 0;
     align-self: self-start;
     border: 2px dashed transparent;
-    transition: color .5s ease-in-out, background-color .5s ease-in-out, scale .1s ease-in-out, border-color .5s ease-in-out;
+    transition: color .5s, background-color .5s, transform .1s, border-color .5s;
 }
 
-a:hover, a:focus{
+a:hover,
+a:focus {
     border-color: var(--bgLink);
-    scale: 0.85;
+    transform: scale(0.85);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-footer{
+footer {
     color: var(--fntSubtitle);
     grid-area: footer;
     text-align: center;
     width: 100%;
     background-color: var(--bgPhantom);
     padding: 1.5rem 0;
-
 }
 
-code{
+code {
     color: var(--fntSubtitle);
 }
 
-strong{
+strong {
     background-color: var(--bgPhantom);
 }
 
-main, section, footer{
+main,
+section,
+footer {
     max-width: 40rem;
 }
 
-.main-container{
+.main-container {
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
@@ -140,21 +133,56 @@ main, section, footer{
 }
 
 @media (max-width: 1200px) {
-    :host{
-        display: grid;
-        grid-template-areas: 
-        "main"
-        "aside-one"
-        "aside-two"
-        "footer";
+    :host {
+        grid-template-areas:
+            "main"
+            "aside-one"
+            "aside-two"
+            "footer";
         justify-content: center;
         align-items: center;
         align-content: center;
     }
 
-    :host > *{
+    :host > * {
         max-width: 100%;
-        /* background-color: #444; */
+    }
+}
+
+@media (max-width: 768px) {
+    :host {
+        gap: 2rem 2rem;
     }
 
+    section > h2{
+        align-self: center;
+    }
+
+    h1 {
+        font-size: 4.5rem;
+    }
+    nav {
+        gap: 1rem;
+    }
+    section p {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    :host {
+        gap: 1rem 1rem;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    nav {
+        gap: .5rem;
+    }
+    .main-container {
+        gap: 1rem;
+    }
 }
