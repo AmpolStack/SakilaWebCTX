@@ -7,13 +7,12 @@
     align-items: start;
     align-content: start;
     gap: 4rem 4rem;
-    background: var(--bgGradient);
     color: var(--fntSpeccial);
-    min-height: 100vh;
 }
 
-:host > * {
-    margin-top: 4rem;
+*{
+    margin: 0;
+    padding: 0;
 }
 
 .decorator {
@@ -100,15 +99,6 @@ a:focus {
     box-sizing: border-box;
 }
 
-footer {
-    color: var(--fntSubtitle);
-    grid-area: footer;
-    text-align: center;
-    width: 100%;
-    background-color: var(--bgPhantom);
-    padding: 1.5rem 0;
-}
-
 code {
     color: var(--fntSubtitle);
 }
@@ -132,7 +122,7 @@ footer {
     align-items: center;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     :host {
         grid-template-areas:
             "main"
@@ -154,8 +144,8 @@ footer {
         gap: 2rem 2rem;
     }
 
-    section > h2{
-        align-self: center;
+    h2{
+        align-self: center !important;
     }
 
     h1 {
