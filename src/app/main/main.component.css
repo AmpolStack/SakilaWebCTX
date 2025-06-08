@@ -22,8 +22,7 @@ h1 {
     color: var(--fntSubtitle);
 }
 
-main,
-section {
+main{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,118 +33,20 @@ section {
     max-width: 100%;
 }
 
-section {
-    align-items: center;
-    max-width: 100%;
-}
-
-section > h3 {
-    color: var(--fntSpeccial);
-}
-
-h4 {
-    color: var(--fntSecondary);
-    text-transform: lowercase;
-    font-weight: lighter;
-}
-
-section > .movie-carousel {
-    display: flex;
-    flex-direction: row;
-    max-width: 90%;
-    overflow-x: scroll;
-    gap: 1rem;
-}
-
-.movie-carousel > div {
-    background: var(--bgGradient);
-    text-align: center;
-}
-
-img {
-    min-height: 100%;
-    min-width: 100%;
-}
-
-.movie-carousel > div > div {
-    aspect-ratio: 3 / 4;
-}
-
-.movie-carousel > * {
-    flex: 0 0 15rem;
-}
-
-.movie-carousel {
-    position: relative;
-    overflow-x: auto;
-    scrollbar-width: medium;
-    scrollbar-color: #64646466 transparent;
-}
-
-.movie-carousel::-webkit-scrollbar {
-    height: 8px;
-    transition: opacity 0.3s;
-    opacity: 0;
-}
-
-.movie-carousel:hover::-webkit-scrollbar {
-    opacity: 1;
-}
-
-.movie-carousel::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.movie-carousel::-webkit-scrollbar-thumb {
-    background-color: #64646499;
-    border-radius: 4px;
-    border: 2px solid transparent;
-    background-clip: content-box;
-}
-
-.movie-carousel::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(100, 100, 100, 0.8);
-}
-
 /* Responsive adjustments */
-@media (max-width: 1024px) {
-    section > .movie-carousel {
-        max-width: 100%;
-        gap: 0.75rem;
-    }
-    .movie-carousel > * {
-        flex: 0 0 12rem;
-    }
-}
-
 @media (max-width: 768px) {
-    main,
-    section {
+    main{
         padding: 0 1.5rem;
         gap: 1.5rem;
-    }
-    section > .movie-carousel {
-        gap: 0.5rem;
-    }
-    .movie-carousel > * {
-        flex: 0 0 10rem;
     }
 }
 
 @media (max-width: 480px) {
-    page-container,
     :host {
         gap: 0.5rem;
     }
-    main,
-    section {
+    main {
         padding: 0 1rem;
         gap: 1rem;
-    }
-    section > .movie-carousel {
-        gap: 0.25rem;
-    }
-    .movie-carousel > * {
-        flex: 0 0 8rem;
     }
 }
