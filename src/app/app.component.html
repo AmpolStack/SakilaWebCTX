@@ -1,4 +1,17 @@
+<header>
+    <div>
+        <h2><a href="">SAKILA CTX</a></h2>
+        <input type="search" name="" id="" placeholder="search">
+        <h3>User</h3>
+    </div>
+</header>
 @if (this.activePopUp() === true) {
 <app-pop-up-window [type]="defaulType" [content]="defaultContent" (isActive)="this.activePopUp.set($event)"></app-pop-up-window>
 }
-<router-outlet/>
+<div class="page-container">
+    <router-outlet/>
+</div>
+<footer>
+    By {{ '@Amapola' }} © 2024
+</footer>
+

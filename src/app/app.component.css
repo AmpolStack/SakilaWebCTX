@@ -1,5 +1,99 @@
 :host{
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    display: grid;
+    grid-template-areas: "header"
+    "content"
+    "footer";
+    grid-template-rows: min-content 1fr min-content;
+    /* justify-content: center; */
+    min-height: 100vh;
+    background: var(--bgGradient);
 }
+
+header{
+    grid-area: header;
+    background-color: var(--bgColor);
+    padding: 1rem 0;
+    position:sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 0 1rem #00000026;
+}
+
+.page-container{
+    overflow: hidden;
+    grid-area: content;
+    padding: 4rem 0;
+}
+
+header > div > *{
+    flex: 1 1 0;
+    text-align: center;
+    /* background-color: #111; */
+}
+
+header > div > input{
+    flex: 0 2 30rem;
+}
+
+header > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0 .2rem;
+    width: 100%;
+    max-width: 90rem;
+}
+
+h2,h3{
+    font-size: 1.5rem !important;
+    /* text-wrap: nowrap; */
+    color: var(--fntSpeccial);
+}
+
+header > div > h2 > a{
+    /* text-wrap: nowrap; */
+    color: var(--fntSpeccial);
+}
+
+header > div > input{
+    padding: .3rem 0;
+    border-radius: 5px;
+    nav-index: -1;
+    background-color: var(--bgGradient);
+    border-color: var(--fntSecondary);
+    color: var(--fntSecondary);
+}
+
+header > div > h3{
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: var(--fntSpeccial);
+}
+
+footer {
+    grid-area: footer;
+    color: var(--fntSubtitle);
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    max-width: 100rem;
+    background-color: var(--bgPhantom);
+    padding: 1rem 0;
+}
+
+@media (max-width: 800px) {
+    h2,h3{
+        font-size: 1rem;
+    }
+    header > div > input{
+        flex: 0 2 60%;
+    }
+}
+
