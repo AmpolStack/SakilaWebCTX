@@ -1,0 +1,13 @@
+<section>
+    <h3>{{title()}}</h3>
+    <div class="movie-carousel">
+        @for (item of movies(); track item.id) {
+            <div>
+                <div>
+                    <img [src]="item.link" alt="img">
+                </div>
+                <h4>{{ item.name }}</h4>
+            </div>
+        }
+    </div>
+</section>
