@@ -10,6 +10,13 @@
     background: var(--bgGradient);
 }
 
+
+*::selection {
+    background-color: var(--fntSubtitle);
+    color: var(--fntSelection);
+}
+
+
 header{
     grid-area: header;
     background-color: var(--bgColor);

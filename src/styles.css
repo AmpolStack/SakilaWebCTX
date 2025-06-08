@@ -5,6 +5,7 @@ body{
     font-family: 'Oswald';
 }
 
+/* DARK THEME (BY DEFAULT) */
 :root{
     --bgColor : #22241a;
     --bgInput : #bbbe9a;
@@ -24,6 +25,7 @@ body{
     --successColor : #79a168;
 }
 
+/* LIGTH THEME */
 /* :root{
     --bgColor : #fff;
     --bgInput : #fff;
