@@ -1,0 +1,154 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem 2rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    max-width: 80rem;
+    align-self: center;
+    display: grid;
+    grid-template-areas:
+    "name name"
+    "principal principal"
+    "tags chars"
+    "buy buy"
+    "actors creators";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(min-content,5);
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+}
+
+h1{
+    grid-area: name;
+    color: var(--fntSecondary);
+    text-transform: uppercase;
+    font-size: 7rem;
+}
+
+ul > *{
+    color: var(--fntSecondary);
+    text-wrap: nowrap;
+}
+
+ul > h4{
+    color: var(--fntSpeccial);
+}
+
+.principal-container{
+    padding: 1rem;
+    grid-area: principal;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.image-container{
+    flex: 1 1 4rem;
+    aspect-ratio: 3/4;
+    max-width: 20rem;
+    position: relative;
+}
+
+.image-container > img{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    background: var(--bgGradient);
+    inset: 0;
+    margin: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.desc{
+    /* background-color: red; */
+    text-align: start;
+    text-wrap: pretty;
+    color: var(--fntSecondary);
+    flex: 1 1 0;
+    overflow-y: scroll;
+    height: 100%;
+    max-height: 21.3rem;
+    max-width: 40rem;
+}
+
+.actors-container > *, .creators-container > *{
+    flex: 0 0 1rem;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.actors-container, .creators-container, .tag-container{
+    gap: 0 .9rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding:1rem;
+}
+
+ul, .char-container{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--fntSpeccial);
+    /* background-color: red; */
+}
+
+h4{
+    color: var(--fntSpeccial);
+}
+
+.char-container{
+    grid-area: chars;
+    color: var(--fntSecondary);
+}
+
+.price-button{
+    grid-area: buy;
+    background-color: var(--bgPhantom);
+    width: 80%;
+    border: none;
+    height: 4rem;
+    padding: 1rem 0;
+    display: block;
+    color: var(--bgLink);
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 2rem auto;
+    box-sizing: border-box;
+    text-decoration: underline;
+    transition: all .3s ease-in-out;
+}
+
+.price-button:hover, .price-button:focus{
+    border: 3px dashed var(--bgLink);
+    scale: 0.95;
+}
+
+.creators-container{
+    grid-area: creators;
+}
+
+.actors-container{
+    list-style: none;
+    grid-area: actors;
+}
+
+aside{
+    padding-top:2rem;
+    border-top: 4px solid var(--bgPhantom);
+}
