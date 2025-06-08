@@ -19,11 +19,6 @@
     color: var(--fntSubtitle);
 }
 
-*::selection {
-    background-color: var(--fntSubtitle);
-    color: var(--fntSelection);
-}
-
 main {
     grid-area: main;
     text-align: center;
