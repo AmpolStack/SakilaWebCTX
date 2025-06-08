@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LandingComponent } from '../landing/landing.component';
 
 @Component({
   selector: 'app-main',
