@@ -5,13 +5,9 @@
 }
 
 :host {
-    background-color: var(--bgColor);
-    background: var(--bgGradient);
     display: flex;
-    min-height: 100vh;
-    height: 100vh;
+    align-items: start;
     color: var(--fntPrincipal);
-    overflow: hidden;
 }
 
 :host > * {
