@@ -11,13 +11,12 @@
 
 h1{
     color: var(--fntSecondary);
-    font-size: 3rem;
+    font-size: var(--fs-xl);
 }
 
 h2{
     color: var(--fntSpeccial);
-    font-size: 4rem;
-
+    font-size: var(--fs-2xl);
 }
 
 *{

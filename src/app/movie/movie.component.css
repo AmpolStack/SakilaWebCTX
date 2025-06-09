@@ -1,50 +1,49 @@
-:host{
+:host {
     display: flex;
     flex-direction: column;
-    gap: 4rem 2rem;
+    gap: var(--spacing-3xl) var(--spacing-2xl);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-main{
+main {
     align-self: center;
-    max-width: 90rem;
+    max-width: calc(var(--container-lg) * 0.85);
     display: grid;
     grid-template-areas:
-    "name name"
-    "principal principal"
-    "tags chars"
-    "buy buy"
-    "actors creators";
+        "name name"
+        "principal principal"
+        "tags chars"
+        "buy buy"
+        "actors creators";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(min-content,5);
+    grid-template-rows: repeat(min-content, 5);
     justify-content: center;
     align-content: center;
     text-align: center;
-
 }
 
-h1{
+h1 {
     grid-area: name;
     color: var(--fntSecondary);
     text-transform: uppercase;
-    font-size: 7rem;
+    font-size: var(--fs-2xl);
 }
 
-ul > *{
+ul > * {
     color: var(--fntSecondary);
     text-wrap: nowrap;
 }
 
-ul > h4{
+ul > h4 {
     color: var(--fntSpeccial);
 }
 
-.principal-container{
-    padding: 1rem;
+.principal-container {
+    padding: var(--spacing-md);
     grid-area: principal;
     display: flex;
     justify-content: center;
@@ -52,14 +51,14 @@ ul > h4{
     align-items: center;
 }
 
-.image-container{
-    flex: 1 1 4rem;
+.image-container {
+    flex: 1 1 var(--movie-image-basis);
     aspect-ratio: 3/4;
-    max-width: 20rem;
+    max-width: var(--container-sm);
     position: relative;
 }
 
-.image-container > img{
+.image-container > img {
     width: 80%;
     height: 80%;
     position: absolute;
@@ -72,89 +71,152 @@ ul > h4{
     display: none;
 }
 
-.desc{
+.desc {
     text-align: start;
     text-wrap: pretty;
     color: var(--fntSecondary);
     flex: 1 1 0;
     overflow-y: scroll;
     height: 100%;
-    max-height: 21.3rem;
-    max-width: 40rem;
+    max-height: var(--movie-desc-height);
+    max-width: var(--container-md);
 }
 
-.actors-container > *, .creators-container > *{
+.actors-container > *, .creators-container > * {
     flex: 0 0 1rem;
     flex-direction: column;
-    gap: .2rem;
+    gap: var(--movie-item-gap);
 }
 
-.actors-container, .creators-container, .tag-container{
-    gap: 0 .9rem;
+.actors-container, .creators-container, .tag-container {
+    gap: 0 var(--movie-container-gap);
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    padding:1rem;
+    padding: var(--spacing-md);
 }
 
-ul, .char-container{
+ul, .char-container {
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: var(--fntSpeccial);
-    /* background-color: red; */
 }
 
-h4{
+h4 {
     color: var(--fntSpeccial);
 }
 
-.char-container{
+.char-container {
     grid-area: chars;
     color: var(--fntSecondary);
 }
 
-.price-button{
+.price-button {
     grid-area: buy;
     background-color: var(--bgPhantom);
     width: 80%;
     border: none;
-    height: 4rem;
-    padding: 1rem 0;
+    height: var(--movie-button-height);
+    padding: var(--spacing-md) 0;
     display: block;
     color: var(--bgLink);
     font-weight: bold;
-    font-size: 1.4rem;
-    margin: 2rem auto;
+    font-size: var(--fs-button);
+    margin: var(--spacing-lg) auto;
     box-sizing: border-box;
     text-decoration: underline;
     transition: all .3s ease-in-out;
 }
 
-.price-button:hover, .price-button:focus-visible{
+.price-button:hover, .price-button:focus-visible {
     border: 3px dashed var(--bgLink);
-    scale: 0.95;
+    transform: scale(0.95);
 }
 
-.creators-container{
+.creators-container {
     grid-area: creators;
 }
 
-.actors-container{
+.actors-container {
     list-style: none;
     grid-area: actors;
 }
 
-aside{
-    max-width: 90rem;
+aside {
+    max-width: var(--container-lg);
     align-self: center;
-    padding-top:2rem;
+    padding-top: var(--spacing-lg);
     border-top: 4px solid var(--bgPhantom);
 }
 
+.carousel {
+    margin: var(--spacing-lg) 0;
+}
 
-.carousel{
-    margin: 3rem 0;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: calc(var(--fs-2xl) * 0.85);
+    }
+    .price-button {
+        font-size: calc(var(--fs-button) * 0.85);
+        height: calc(var(--movie-button-height) * 0.85);
+        margin: calc(var(--spacing-lg) * 0.85) auto;
+    }
+    .principal-container, .actors-container, .creators-container, .tag-container {
+        padding: calc(var(--spacing-md) * 0.85);
+        gap: calc(var(--movie-item-gap) * 0.85);
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-areas:
+            "name"
+            "principal"
+            "tags"
+            "chars"
+            "buy"
+            "actors"
+            "creators";
+        grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: calc(var(--fs-2xl) * 0.75);
+    }
+    .price-button {
+        font-size: calc(var(--fs-button) * 0.75);
+        height: calc(var(--movie-button-height) * 0.75);
+        margin: calc(var(--spacing-lg) * 0.75) auto;
+    }
+
+    aside {
+        max-width: 100%;
+    }
+
+    p, li, h4{
+        font-size: .6rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: calc(var(--fs-2xl) * 0.6);
+    }
+    aside {
+        padding-top: 0;
+    }
+    .image-container {
+        max-width: calc(var(--container-sm) * 0.6);
+    }
+    .desc {
+        max-width: calc(var(--container-md) * 0.6);
+        max-height: calc(var(--movie-desc-height) * 0.6);
+    }
+    ul {
+        gap: calc(var(--spacing-3xl) * 0.5);
+    }
 }
