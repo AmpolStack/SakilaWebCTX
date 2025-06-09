@@ -77,6 +77,8 @@
 </main>
 <aside>
     @for (item of defaultCarrousels; track $index) {
-        <app-carousel [title]="item.title" [movies]="item.movies"></app-carousel>
+        <div class="carousel">
+            <app-carousel [title]="item.title" [movies]="item.movies"></app-carousel>
+        </div>
     }
 </aside>

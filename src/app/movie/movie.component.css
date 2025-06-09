@@ -10,8 +10,8 @@
 }
 
 main{
-    max-width: 80rem;
     align-self: center;
+    max-width: 90rem;
     display: grid;
     grid-template-areas:
     "name name"
@@ -73,7 +73,6 @@ ul > h4{
 }
 
 .desc{
-    /* background-color: red; */
     text-align: start;
     text-wrap: pretty;
     color: var(--fntSecondary);
@@ -134,7 +133,7 @@ h4{
     transition: all .3s ease-in-out;
 }
 
-.price-button:hover, .price-button:focus{
+.price-button:hover, .price-button:focus-visible{
     border: 3px dashed var(--bgLink);
     scale: 0.95;
 }
@@ -149,6 +148,13 @@ h4{
 }
 
 aside{
+    max-width: 90rem;
+    align-self: center;
     padding-top:2rem;
     border-top: 4px solid var(--bgPhantom);
+}
+
+
+.carousel{
+    margin: 3rem 0;
 }
