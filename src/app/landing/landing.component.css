@@ -83,7 +83,7 @@ a {
 }
 
 a:hover,
-a:focus {
+a:focus-visible {
     border-color: var(--bgLink);
     transform: scale(0.85);
 }
