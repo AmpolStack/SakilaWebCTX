@@ -7,6 +7,45 @@ body{
 
 /* DARK THEME (BY DEFAULT) */
 :root{
+    /* Scale factor for responsive design */
+    --scale: 0.75;
+    
+    /* Font sizes */
+    --fs-xs: calc(0.75rem * var(--scale));
+    --fs-sm: calc(1rem * var(--scale));
+    --fs-md: calc(1.5rem * var(--scale));
+    --fs-lg: calc(2rem * var(--scale));
+    --fs-xl: calc(3rem * var(--scale));
+    --fs-2xl: calc(4rem * var(--scale));
+    --fs-3xl: calc(7rem * var(--scale)); /* Para h1 en movie */
+    --fs-button: calc(1.4rem * var(--scale)); /* Para el botón de precio */
+    
+    /* Spacing */
+    --spacing-xs: calc(0.25rem * var(--scale));
+    --spacing-sm: calc(0.5rem * var(--scale));
+    --spacing-md: calc(1rem * var(--scale));
+    --spacing-lg: calc(2rem * var(--scale));
+    --spacing-xl: calc(4rem * var(--scale));
+    --spacing-2xl: calc(6rem * var(--scale)); /* Para el gap del host */
+    --spacing-3xl: calc(8rem * var(--scale)); /* Para el gap del host */
+
+    /* Container sizes */
+    --container-sm: calc(20rem * var(--scale)); /* Para max-width de image-container */
+    --container-md: calc(40rem * var(--scale)); /* Para max-width de desc */
+    --container-lg: calc(90rem * var(--scale)); /* Para max-width de main y aside */
+    --container-xl: calc(120rem * var(--scale));
+
+    /* Component specific */
+    --movie-image-basis: calc(4rem * var(--scale)); /* Para flex-basis de image-container */
+    --movie-desc-height: calc(21.3rem * var(--scale)); /* Para max-height de desc */
+    --movie-button-height: calc(4rem * var(--scale)); /* Para height del botón de precio */
+    --movie-item-gap: calc(0.2rem * var(--scale)); /* Para gap de items en containers */
+    --movie-container-gap: calc(0.9rem * var(--scale)); /* Para gap de containers */
+
+}
+
+/* DARK THEME */
+:root{
     --bgColor : #22241a;
     --bgInput : #bbbe9a;
 
@@ -33,10 +72,26 @@ body{
     --fntSpeccial: #000;
     --fntPrincipal: #fff;
     --fntSecondary: #888;
-    --fntLink: #0004ff;
-    --fntSubtitle: #d9855e;
+    --fntLink: #5175bc;
+    --fntSubtitle: #c67955;
 
     --bgLink:  var(--fntLink);
     --fntSelection: #fff;
     --bgPhantom: #9898983d;
+
+    --errorColor : #cd4141;
+    --successColor : #79a168;
+} */
+
+/* Media queries for responsive scaling */
+@media (max-width: 1200px) {
+    :root {
+        --scale: 0.6;
+    }
+}
+
+/* @media (max-width: 576px) {
+    :root {
+        --scale: 0.8;
+    }
 } */
