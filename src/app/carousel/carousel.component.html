@@ -1,5 +1,7 @@
 <section>
-    <h3 [class.category-center]="this.isVertical()">{{title()}}</h3>
+    @if(this.title !== undefined){
+        <h3 [class.category-center]="this.isVertical()">{{title()}}</h3>
+    }
     <div class="movie-carousel" [class.vertical]="this.isVertical()">
         @for (item of movies(); track item.id) {
             <button>

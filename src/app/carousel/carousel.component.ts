@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, InputSignal } from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -7,7 +7,7 @@ import { Component, input } from '@angular/core';
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent {
-  public title = input.required<string>();
+  public title : InputSignal<string | undefined> = input<string>();
   public movies = input.required<movie[]>();
   public isVertical = input<boolean>(false);
 }
