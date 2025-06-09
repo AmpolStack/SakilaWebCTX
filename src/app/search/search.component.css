@@ -1,0 +1,10 @@
+:host{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1rem;
+    gap: 1rem;
+}
+/* 
+:host > *{
+    ba
+} */
