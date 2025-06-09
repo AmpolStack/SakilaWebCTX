@@ -1,10 +1,113 @@
 :host{
-    display: flex;
-    flex-direction: row-reverse;
+    margin: 0 auto;
+    max-width: 90rem;
+    display: grid;
+    grid-template-areas: 
+    "searched searched"
+    "filters carousel";
+    /* flex-direction: row-reverse; */
+    flex-wrap: wrap;
     padding: 1rem;
     gap: 1rem;
+    position: relative;
 }
-/* 
-:host > *{
-    ba
-} */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    grid-area: carousel;
+}
+
+h2{
+    text-transform: uppercase;
+    grid-area: searched;
+    text-align: center;
+    /* background-color: brown; */
+    color: var(--fntSecondary);
+    width: 100%;
+}
+ul{
+    list-style: none;
+    /* background-color: red; */
+}
+
+h4{
+    color: var(--fntSecondary);
+    text-transform: uppercase;
+}
+
+h5{
+    text-align: start;
+    /* background-color: black; */
+    /* text-transform: uppercase; */
+    color: var(--fntSecondary);
+}
+
+aside{
+    grid-area: filters;
+    padding: 2rem;
+    /* background-color: brown; */
+    gap: 1rem;
+    position: sticky;
+    /* max-height: 100vh; */
+    flex: 0 0 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: start;
+}
+
+aside > ul{
+    /* background-color: black; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    color: var(--fntSecondary);
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1rem;
+    aspect-ratio: 1/1;
+    border: 1px solid var(--fntSecondary);
+    border-radius: 4px;
+    cursor: pointer;
+    /* background-color: black !important; */
+}
+
+input[type="checkbox"]:checked{
+    background-color: var(--fntSpeccial);
+}
+
+input[type="checkbox"]:checked::before {
+    color: var(--bgColor) !important;
+}
+
+input[type="checkbox"]::before{
+    content: 'X';
+    font-weight: bold;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    color: transparent;
+}
+
+input[type="search"]{
+    padding: .3rem 0;
+    border-radius: 5px;
+    nav-index: -1;
+    background-color: var(--bgGradient);
+    border-color: var(--fntSecondary);
+    color: var(--fntSecondary);
+}
