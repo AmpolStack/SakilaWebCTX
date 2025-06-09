@@ -9,6 +9,7 @@ import { Component, input } from '@angular/core';
 export class CarouselComponent {
   public title = input.required<string>();
   public movies = input.required<movie[]>();
+  public isVertical = input<boolean>(false);
 }
 
 export interface movie{

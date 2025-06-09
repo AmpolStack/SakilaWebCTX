@@ -1,13 +1,13 @@
 <section>
-    <h3>{{title()}}</h3>
-    <div class="movie-carousel">
+    <h3 [class.category-center]="this.isVertical()">{{title()}}</h3>
+    <div class="movie-carousel" [class.vertical]="this.isVertical()">
         @for (item of movies(); track item.id) {
-            <div>
+            <button>
                 <div>
                     <img [src]="item.link" alt="img">
                 </div>
                 <h4>{{ item.name }}</h4>
-            </div>
+            </button>
         }
     </div>
 </section>

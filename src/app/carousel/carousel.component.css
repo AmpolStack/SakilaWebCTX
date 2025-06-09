@@ -1,63 +1,51 @@
-section{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    padding: 0 2rem;
-    gap: 2rem;
-    box-sizing: border-box;
-    max-width: 100%;
-}
-
-
-section {
     align-items: center;
-    max-width: 100%;
+    padding: 0 2rem;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 section > h3 {
+    align-self: self-start;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
     color: var(--fntSpeccial);
 }
 
 h4 {
     color: var(--fntSecondary);
-    text-transform: lowercase;
+    text-transform: capitalize;
     font-weight: lighter;
 }
 
 section > .movie-carousel {
     display: flex;
     flex-direction: row;
-    max-width: 90%;
-    overflow-x: scroll;
-    gap: 1rem;
-}
-
-.movie-carousel > div {
-    background: var(--bgGradient);
-    text-align: center;
-}
-
-img {
-    min-height: 100%;
-    min-width: 100%;
-}
-
-.movie-carousel > div > div {
-    aspect-ratio: 3 / 4;
-}
-
-.movie-carousel > * {
-    flex: 0 0 15rem;
-}
-
-.movie-carousel {
-    position: relative;
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
+    gap: 1rem;
     scrollbar-width: medium;
     scrollbar-color: #64646466 transparent;
+    position: relative;
 }
 
+button{
+    border: none;
+}
+
+/* Scrollbar Webkit */
 .movie-carousel::-webkit-scrollbar {
     height: 8px;
     transition: opacity 0.3s;
@@ -83,12 +71,51 @@ img {
     background-color: rgba(100, 100, 100, 0.8);
 }
 
-/* Responsive adjustments */
+.movie-carousel > button {
+    background: var(--bgGradient);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.movie-carousel > button > div {
+    aspect-ratio: 3 / 4;
+}
+
+.movie-carousel > button:hover,
+.movie-carousel > button:focus-visible {
+    scale: 0.95;
+}
+
+.movie-carousel > * {
+    flex: 0 0 15rem;
+}
+
+img {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+/* Vista vertical */
+section > .vertical {
+    flex-direction: row;
+    overflow-x: unset;
+    flex-wrap: wrap;
+    align-content: start;
+    align-items: start;
+    justify-content: center;
+}
+
+section > .category-center {
+    align-self: center;
+    font-size: 1rem;
+}
+
 @media (max-width: 1024px) {
     section > .movie-carousel {
-        max-width: 100%;
         gap: 0.75rem;
     }
+
     .movie-carousel > * {
         flex: 0 0 12rem;
     }
@@ -97,27 +124,27 @@ img {
 @media (max-width: 768px) {
     section {
         padding: 0 1.5rem;
-        gap: 1.5rem;
     }
+
     section > .movie-carousel {
         gap: 0.5rem;
     }
+
     .movie-carousel > * {
         flex: 0 0 10rem;
     }
 }
 
 @media (max-width: 480px) {
-    page-container{
-        gap: 0.5rem;
-    }
     section {
         padding: 0 1rem;
         gap: 1rem;
     }
+
     section > .movie-carousel {
         gap: 0.25rem;
     }
+
     .movie-carousel > * {
         flex: 0 0 8rem;
     }
