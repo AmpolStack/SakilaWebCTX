@@ -36,6 +36,7 @@ header{
     overflow: hidden;
     grid-area: content;
     padding: 4rem 0;
+    /* background-color: red; */
 }
 
 header > div > *{
