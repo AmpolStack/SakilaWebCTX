@@ -10,10 +10,10 @@ section {
     justify-content: center;
     align-content: center;
     align-items: center;
-    padding: 0 var(--spacing-lg);
+    /* padding: 0 var(--spacing-lg); */
     width: 100%;
     max-width: 100vw;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 section > h3 {
@@ -31,6 +31,7 @@ h4 {
 
 section > .movie-carousel {
     display: flex;
+    /* padding: 10rem; */
     flex-direction: row;
     width: 100%;
     max-width: 100%;
@@ -101,8 +102,6 @@ section > .vertical {
     flex-direction: row;
     overflow-x: unset;
     flex-wrap: wrap;
-    align-content: start;
-    align-items: start;
     justify-content: center;
 }
 
@@ -117,7 +116,7 @@ section > .category-center {
     }
 
     .movie-carousel > * {
-        flex: 0 0 12rem;
+        flex: 0 0 7.5rem;
     }
 }
 
@@ -146,6 +145,6 @@ section > .category-center {
     }
 
     .movie-carousel > * {
-        flex: 0 0 8rem;
+        flex: 0 0 5rem;
     }
 }

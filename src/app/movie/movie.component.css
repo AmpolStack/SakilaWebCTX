@@ -95,6 +95,7 @@ ul > h4 {
     align-items: center;
     flex-direction: row;
     padding: var(--spacing-md);
+    max-width: 28rem;
 }
 
 ul, .char-container {

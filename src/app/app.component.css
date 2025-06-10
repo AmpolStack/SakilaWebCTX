@@ -2,6 +2,7 @@
     position: relative;
     display: grid;
     grid-template-areas: "header"
+    "recommendations"
     "content"
     "footer";
     grid-template-rows: min-content 1fr min-content;
@@ -10,18 +11,65 @@
     background: var(--bgGradient);
 }
 
-
 *::selection {
     background-color: var(--fntSubtitle);
     color: var(--fntSelection);
 }
 
+aside{
+    /* background-color: black; */
+    width: 100%;
+    /* height: 0; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
 
+::-webkit-scrollbar {
+    display: none;
+}
+
+ul{
+    /* margin: auto; */
+    background: var(--bgColor);
+    width: 90%;
+    height: min-content;
+    max-height: 12rem;
+    overflow-y: scroll;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    display: flex;
+    gap: .2em;
+    flex-direction: column;
+    /* justify-content: ; */
+    align-items: center;
+    list-style: none;
+}
+
+li{
+    text-align: center;
+    border-radius: .2rem;
+    color: var(--fntSecondary);
+    /* background-color: black; */
+    padding:.2rem 0 .2rem 0;
+    margin: 0;
+    width: 90%;
+
+}
+
+
+
+:host > *{
+    /* background-color: red !important; */
+}
 header{
     grid-area: header;
     background-color: var(--bgColor);
-    background: #1b1d1408;
-    background: linear-gradient(90deg, #1b1d14ea 0%, #1e2117f0 10%, #1e2213e7 25%, #282d1a 50%, #1e2213e7 75%, #1e2117f0 90%, #1b1d14ea 100%);
+
+
+    background-color: var(--header-bg);
+    background: var(--header-gradient);
     padding: var(--spacing-md) 0;
     position:sticky;
     top: 0;
