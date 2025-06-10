@@ -6,12 +6,16 @@
     "searched searched"
     "filters carousel";
     /* flex-direction: row-reverse; */
+    grid-template-columns: 7rem minmax(60%, 1fr);
     flex-wrap: wrap;
     padding: 1rem;
     gap: 1rem;
     position: relative;
 }
 
+:host > *{
+    background-color: red !important;
+}
 *{
     margin: 0;
     padding: 0;
@@ -19,6 +23,11 @@
 
 main{
     grid-area: carousel;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+    /* background-color: black !important; */
 }
 
 h2{
@@ -48,12 +57,9 @@ h5{
 
 aside{
     grid-area: filters;
-    padding: 2rem;
-    /* background-color: brown; */
     gap: 1rem;
     position: sticky;
-    /* max-height: 100vh; */
-    flex: 0 0 10rem;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,11 +67,21 @@ aside{
     justify-content: start;
 }
 
+li{
+    font-weight: lighter;
+}
+
+main *{
+    display: flex;
+    /* background-color: blue !important; */
+}
+
 aside > ul{
-    /* background-color: black; */
     width: 100%;
+    /* background-color: #444; */
     display: flex;
     flex-direction: column;
+    /* padding: 1rem; */
     justify-content: center;
     align-items: center;
 }
