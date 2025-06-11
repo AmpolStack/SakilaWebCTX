@@ -10,7 +10,7 @@ export const routes: Routes = [
     { path: 'landing', component: LandingComponent},
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
     { path: 'login', component: LoginComponent},
-    { path: 'main', component: MainComponent},
+    { path: 'home', component: MainComponent},
     { path: 'movie', component: MovieComponent},
     { path: 'actor', component: ActorComponent },
     { path: 'search', component: SearchComponent},
