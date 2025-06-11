@@ -1,5 +1,5 @@
 <main>
-    @for (item of defaultCarrousels; track $index) {
+    @for (item of this.carousels(); track $index) {
         <app-carousel [title]="item.title" [movies]="item.movies"></app-carousel>
     }
 </main>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, resource, signal } from '@angular/core';
 import { CarouselComponent, carouselProps, movie } from '../carousel/carousel.component';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-main',
@@ -8,24 +9,28 @@ import { CarouselComponent, carouselProps, movie } from '../carousel/carousel.co
   styleUrl: './main.component.css'
 })
 export class MainComponent {
-  public defaultMovies : movie[] = [
-    { id: 0, name: 'Movie Name', link: ''},
-    { id: 1, name: 'Movie Name', link: ''},
-    { id: 2, name: 'Movie Name', link: ''},
-    { id: 3, name: 'Movie Name', link: ''},
-    { id: 4, name: 'Movie Name', link: ''},
-    { id: 5, name: 'Movie Name', link: ''},
-    { id: 6, name: 'Movie Name', link: ''},
-    { id: 7, name: 'Movie Name', link: ''},
-    { id: 8, name: 'Movie Name', link: ''},
-    { id: 9, name: 'Movie Name', link: ''},
-  ]
+  public dataService: DataService = inject(DataService);
+  public carousels = signal<carouselProps[] | null>(null);
 
-  public defaultCarrousels : carouselProps[] = [
-    {title: 'Movie Category', movies: this.defaultMovies},
-    {title: 'Movie Category', movies: this.defaultMovies},
-    {title: 'Movie Category', movies: this.defaultMovies},
-    {title: 'Movie Category', movies: this.defaultMovies},
-    {title: 'Movie Category', movies: this.defaultMovies}
-  ]
+  constructor(){
+    var resp = this.dataService.ObtainFilmsByCategories()
+      .subscribe({
+        next: (success) =>{
+          let data = success.data;
+          let resp = data.map(category =>({
+            title: category.name,
+            movies: category.films.map(movie =>({
+              id: movie.id,
+              name: movie.title,
+              link: ''
+            }))
+          }));
+
+          this.carousels.set(resp)
+        },
+        error: (error) =>{
+          console.error(error)
+        }
+      })
+  }
 }
