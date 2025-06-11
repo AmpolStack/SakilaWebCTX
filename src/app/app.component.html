@@ -1,11 +1,12 @@
 <header>
     <div>
         <h2><a href="">SAKILA CTX</a></h2>
-        <input type="search" name="" id="" placeholder="search">
+        <input type="search" name="" id="" placeholder="search" (focus)="this.isSuggestionWindowActive.set(true)">
         <h3>User</h3>
     </div>
 </header>
-<!-- <aside>
+@if(this.isSuggestionWindowActive()){
+    <aside>
     <ul>
         <li><a href="">Lorem ipsum, dolor sit amet  </a></li>
         <li><a href="">Dolorem odio, in libero</a></li>
@@ -24,7 +25,8 @@
         <li><a href="">Eveniet omnis magnam qui</a></li>
         <li><a href="">Neque repudiandae molestias</a></li>
     </ul>
-</aside> -->
+</aside>
+}
 @if (this.activePopUp() === true) {
 <app-pop-up-window [type]="defaulType" [content]="defaultContent" (isActive)="this.activePopUp.set($event)"></app-pop-up-window>
 }

@@ -10,7 +10,7 @@ import { PopUpContent, PopUpType, PopUpWindowComponent } from './pop-up-window/p
 })
 export class AppComponent {
   title = 'sakila_pjt';
-  
+  public isSuggestionWindowActive = signal<boolean>(false);
   public activePopUp = signal<boolean>(false);
 
   defaultContent : PopUpContent = {
