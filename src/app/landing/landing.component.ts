@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { API_URL } from '../app.config';
 import { prominentItem, ProminentsListComponent } from './prominents-list/prominents-list.component';
+import { AssociatorComponent } from './associator/associator.component';
 
 @Component({
   selector: 'app-landing',
-  imports: [RouterModule, ProminentsListComponent],
+  imports: [RouterModule, ProminentsListComponent, AssociatorComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })

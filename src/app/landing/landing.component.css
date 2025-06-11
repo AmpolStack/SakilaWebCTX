@@ -36,29 +36,6 @@ main {
     grid-area: aside-two;
 }
 
-section {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    max-width: 40rem;
-}
-
-section > a {
-    align-self: center;
-}
-
-section p {
-    max-width: 90%;
-    color: var(--fntSecondary);
-    font-weight: 300;
-}
-
-section h2 {
-    align-self: flex-start;
-}
-
 h1 {
     white-space: nowrap;
     font-size: var(--fs-3xl);
@@ -74,6 +51,7 @@ nav {
 }
 
 a {
+    text-wrap: nowrap;
     text-transform: uppercase;
     font-weight: bold;
     background-color: var(--bgPhantom);
