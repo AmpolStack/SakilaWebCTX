@@ -45,7 +45,7 @@ body{
 }
 
 /* DARK THEME */
-/* :root{
+:root{
     --bgColor : #22241a;
     --bgInput : #bbbe9a;
 
@@ -66,7 +66,7 @@ body{
 
     --errorColor : #cd4141;
     --successColor : #79a168;
-} */
+}
 
 /* LIGTH THEME */
 /* :root{
@@ -132,38 +132,6 @@ body{
   --errorColor: #e06c6c;
   --successColor: #a6db7f;
 } */
-
-:root{
-    --bgColor : #22241a;
-    --bgInput : #bbbe9a;
-
-    --header-bg:#1b1d1408;
-    --header-gradient: linear-gradient(90deg, #1b1d14ea 0%, #1e2117f0 10%, #1e2213e7 25%, #282d1a 50%, #1e2213e7 75%, #1e2117f0 90%, #1b1d14ea 100%);
-
-
-    --fntSpeccial: #a3bc51;
-    --fntPrincipal: #22241a;
-    --fntSecondary: #bbbe9a;
-    --fntLink: #5175bc;
-    --fntSubtitle: #d9855e;
-
-    --bgLink:  #6363d1;
-    --fntSelection: #444;
-    --bgPhantom: #7a797919;
-    --bgGradient: linear-gradient(337deg, rgba(34, 36, 26, 1) 0%, rgba(46, 48, 34, 1) 53%, rgba(34, 36, 26, 1) 100%);
-
-    --errorColor : #cd4141;
-    --successColor : #79a168;
-}
-
-
-
-
-
-
-
-
-
 
 /* Media queries for responsive scaling */
 @media (max-width: 1200px) {
