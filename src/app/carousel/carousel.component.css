@@ -7,13 +7,8 @@
 section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    /* padding: 0 var(--spacing-lg); */
     width: 100%;
-    max-width: 100vw;
-    /* overflow-x: hidden; */
+    max-width: 60rem;
 }
 
 section > h3 {
@@ -24,9 +19,15 @@ section > h3 {
 }
 
 h4 {
+    margin: 0 auto;
     color: var(--fntSecondary);
     text-transform: capitalize;
     font-weight: lighter;
+    overflow: hidden;
+    max-width: 10em;
+    text-wrap: nowrap; 
+    text-align: center;
+    text-overflow:ellipsis;
 }
 
 section > .movie-carousel {
@@ -42,9 +43,10 @@ section > .movie-carousel {
     position: relative;
 }
 
+/* 
 button {
     border: none;
-}
+} */
 
 /* Scrollbar Webkit */
 .movie-carousel::-webkit-scrollbar {
@@ -72,19 +74,39 @@ button {
     background-color: rgba(100, 100, 100, 0.8);
 }
 
-.movie-carousel > button {
+.movie-carousel > a {
     background: var(--bgGradient);
     text-align: center;
     cursor: pointer;
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    justify-content: space-around;
     transition: all 0.2s ease-in-out;
 }
 
-.movie-carousel > button > div {
+/* button > *{
+    background-color: red;
+} */
+
+a{
+    z-index: 100;
+    text-decoration: none;
+    color: var(--fntSecondary);
+}
+
+
+a > div{
+    width: 100%;
+    height: 100%;
+}
+
+.movie-carousel > a{
     aspect-ratio: 3 / 4;
 }
 
-.movie-carousel > button:hover,
-.movie-carousel > button:focus-visible {
+.movie-carousel > a:hover,
+.movie-carousel > a:focus-visible {
     scale: 0.95;
 }
 
@@ -93,8 +115,11 @@ button {
 }
 
 img {
-    min-height: 100%;
-    min-width: 100%;
+    z-index: 99;
+    object-fit:cover;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
 }
 
 /* Vista vertical */
@@ -115,8 +140,12 @@ section > .category-center {
         gap: var(--spacing-sm);
     }
 
+    h4{
+        font-size: var(--fs-sm);
+    }
+
     .movie-carousel > * {
-        flex: 0 0 7.5rem;
+        flex: 0 0 15rem;
     }
 }
 
@@ -125,26 +154,34 @@ section > .category-center {
         padding: 0 var(--spacing-md);
     }
 
+    h4{
+        font-size: calc(var(--fs-sm));
+    }
+
     section > .movie-carousel {
         gap: var(--spacing-xs);
     }
 
     .movie-carousel > * {
-        flex: 0 0 10rem;
+        flex: 0 0 12rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     section {
         padding: 0 var(--spacing-md);
         gap: var(--spacing-md);
     }
 
+    h4{
+        font-size: calc(var(--fs-sm));
+    }
+
     section > .movie-carousel {
         gap: var(--spacing-xs);
     }
 
     .movie-carousel > * {
-        flex: 0 0 5rem;
+        flex: 0 0 7rem;
     }
 }

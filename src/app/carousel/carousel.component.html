@@ -4,12 +4,12 @@
     }
     <div class="movie-carousel" [class.vertical]="this.isVertical()">
         @for (item of movies(); track item.id) {
-            <button>
+            <a [routerLink]="['/movie/' + item.id]">
                 <div>
-                    <img [src]="item.link" alt="img">
+                    <img [src]="'https://i.pinimg.com/736x/b5/b6/5a/b5b65a963f5dfff82e0eea5dab0a51f1.jpg'" alt="img">
                 </div>
                 <h4>{{ item.name }}</h4>
-            </button>
+            </a>
         }
     </div>
 </section>

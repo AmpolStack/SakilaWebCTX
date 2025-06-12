@@ -1,8 +1,9 @@
 import { Component, input, InputSignal } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css'
 })
@@ -13,7 +14,7 @@ export class CarouselComponent {
 }
 
 export interface movie{
-  id : number;
+  id : string;
   name : string;
   link : string;
 }
