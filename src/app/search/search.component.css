@@ -13,9 +13,6 @@
     position: relative;
 }
 
-:host > *{
-    background-color: red !important;
-}
 *{
     margin: 0;
     padding: 0;
