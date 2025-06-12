@@ -14,10 +14,13 @@ export class DataService {
   public ObtainFilmsByCategories() : Observable<ApiResponse<category[]>>{
     return this.http.get<ApiResponse<category[]>>(`${this.apiUrl}/films/getFilmsWithCategories`)
   }
+
+  public ObtainFilmByReferenceId(referenceId : string) : Observable<ApiResponse<Expensefilm>>{
+    return this.http.get<ApiResponse<Expensefilm>>(`${this.apiUrl}/films/getFilm?referenceId=${referenceId}`)
+  }
 }
 
-export interface film{
-  id: number;
+export interface Expensefilm{
   title : string;
   description : string;
   release_year: number;
@@ -29,9 +32,16 @@ export interface film{
   special_features: string;
   last_update: Date;
   language: string;
+  actorsNames: string[];
+}
+
+export interface Minimalfilm{
+  referenceId: string;
+  title : string;
+  imageBlob : string;
 }
 
 export interface category{
   name: string;
-  films : film[];
+  films : Minimalfilm[];
 }
