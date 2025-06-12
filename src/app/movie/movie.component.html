@@ -1,19 +1,11 @@
 <main>
-    <h1>Movie name</h1>
-    <!-- <p class="release-year">{{'∙ 1990 ∙'}}</p> -->
+    <h1>{{this.movie()?.title}}</h1>
     <div class="principal-container">
         <div class="image-container">
             <img src="" alt="image">
         </div>
-        <p class="desc">description Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad perferendis repellendus culpa soluta quos id voluptates expedita officia incidunt maiores consectetur ab, accusamus repellat excepturi, asperiores et, odit dolore. Optio?
-            Omnis eveniet minima molestias accusamus dolorem iure, soluta vero sint quis quas rerum eius esse, vel tenetur incidunt nesciunt aut. Quam minima minus earum dolor consequuntur maxime error tenetur numquam.
-            Perferendis saepe magnam aut. Soluta velit sit odio explicabo maxime repellat rerum reiciendis delectus illo, laudantium eius in facere, consectetur ut fugiat fugit dolore nostrum eligendi pariatur temporibus numquam dolorem.
-            Eos animi reprehenderit aspernatur recusandae ipsa soluta odit ullam corrupti eius at exercitationem consequuntur nostrum nesciunt incidunt autem tempora placeat nobis consectetur, ea enim sequi. Eum mollitia et ad aut.
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam doloribus vel vitae, quo itaque sit veniam maiores magnam alias quae. Animi veritatis deleniti dolor molestias impedit magnam harum officiis quaerat.
-            Ea natus porro ipsa, laboriosam minima provident? Quis consectetur magnam asperiores ut, quisquam, aliquam temporibus veniam rerum repellendus doloremque laboriosam fugiat placeat qui rem dignissimos enim soluta quo architecto aperiam.
-            Corporis magnam necessitatibus laboriosam debitis nisi nihil exercitationem illum voluptatum eum autem quod veritatis quisquam reprehenderit voluptates quibusdam, ut mollitia quam repellat in temporibus error? Sunt itaque debitis dignissimos hic.
-            Quae at vero, sapiente sequi sint possimus, debitis qui quam voluptatibus eos dolorem non voluptatum. Rerum quis, distinctio recusandae voluptas labore magni nihil harum officiis sapiente maiores eos, voluptatibus pariatur!
-            Quae sint harum sequi vero reiciendis saepe delectus dicta, praesentium voluptatem quaerat quos eius fuga esse facere? Illum aliquid officiis nisi cumque minima recusandae suscipit culpa quod nam, pariatur possimus?
+        <p class="desc">
+            {{this.movie()?.description?.repeat(15)}}
         </p>
     </div>
     <ul class="tag-container">
@@ -29,50 +21,38 @@
         <li>Action</li>
         <li>Survival</li>
         <li>Action</li>
+        <li>Survival</li>
+        <li>Action</li>
+        <li>Survival</li>
+        <li>Action</li>
+        <li>Survival</li>
+        <li>Action</li>
+        <li>Survival</li>
+        <li>Action</li>
     </ul>
     <div class="char-container">
-        <p>Release year: {{ '1999' }}</p>
-        <p>Duration: {{ '177 minutes' }}</p>
-        <p>Rating: {{ 'PG' }}</p>
+        <p>Release year: {{ this.movie()?.release_year }}</p>
+        <p>Duration: {{ this.movie()?.length }} minutes</p>
+        <p>Language: {{ this.movie()?.language}}</p>
+        <p>Rating: {{ this.movie()?.rating }}</p>
+                @for (item of this.movie()?.special_features?.split(','); track $index) {
+            <li>Special feature: {{item}}</li>
+        }
     </div>
     <button class="price-button">$1.99</button>
     <ul class="creators-container">
         <h4>Creators:</h4>
-        <li>Bella Ramsey</li>
-        <li>Pedro Pascal</li>
-        <li>Gabriela Luna</li>
-        <li>Bella Ramsey</li>
-        <li>Pedro Pascal</li>
-        <li>Gabriela Luna</li>
-        <li>Bella Ramsey</li>
-        <li>Pedro Pascal</li>
-        <li>Gabriela Luna</li>
-        <li>Bella Ramsey</li>
-        <li>Pedro Pascal</li>
-        <li>Gabriela Luna</li>
-        <li>Bella Ramsey</li>
-        <li>Pedro Pascal</li>
-        <li>Gabriela Luna</li>
+        @for (item of this.movie()?.actorsNames; track $index) {
+            <li>{{ item.repeat(3) | titlecase }}@if($index !== $count - 1){,}
+            </li>
+        }
     </ul>
     <ul class="actors-container">
         <h4>Actors:</h4>
-        <li>Bella Ramsey</li>
-        <li>Pedro Pascal</li>
-        <li>Gabriela Luna</li>
-        <li>Bella Ramsey</li>
-        <li>Pedro Pascal</li>
-        <li>Bella Ramsey</li>
-        <li>Pedro Pascal</li>
-        <li>Gabriela Luna</li>
-        <li>Bella Ramsey</li>
-        <li>Pedro Pascal</li>
-        <li>Gabriela Luna</li>
-        <li>Bella Ramsey</li>
-        <li>Pedro Pascal</li>
-        <li>Gabriela Luna</li>
-        <li>Bella Ramsey</li>
-        <li>Pedro Pascal</li>
-        <li>Gabriela Luna</li>
+        @for (item of this.movie()?.actorsNames; track $index) {
+            <li>{{ item.repeat(3) | titlecase }}@if($index !== $count - 1){,}
+            </li>
+        }
     </ul>
 </main>
 <aside>
