@@ -13,19 +13,19 @@ export class MainComponent {
   public carousels = signal<carouselProps[] | null>(null);
 
   constructor(){
-    var resp = this.dataService.ObtainFilmsByCategories()
+    this.dataService.ObtainFilmsByCategories()
       .subscribe({
         next: (success) =>{
           let data = success.data;
           let resp = data.map(category =>({
             title: category.name,
             movies: category.films.map(movie =>({
-              id: movie.id,
+              id: movie.referenceId,
               name: movie.title,
               link: ''
             }))
           }));
-
+          console.log(success);
           this.carousels.set(resp)
         },
         error: (error) =>{

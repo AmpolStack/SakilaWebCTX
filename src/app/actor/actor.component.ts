@@ -9,16 +9,16 @@ import { CarouselComponent, carouselProps, movie } from '../carousel/carousel.co
 })
 export class ActorComponent {
     public defaultMovies : movie[] = [
-      { id: 1, name: 'Movie Name', link: ''},
-      { id: 2, name: 'Movie Name', link: ''},
-      { id: 3, name: 'Movie Name', link: ''},
-      { id: 4, name: 'Movie Name', link: ''},
-      { id: 5, name: 'Movie Name', link: ''},
-      { id: 6, name: 'Movie Name', link: ''},
-      { id: 7, name: 'Movie Name', link: ''},
-      { id: 8, name: 'Movie Name', link: ''},
-      { id: 9, name: 'Movie Name', link: ''},
-      { id: 10, name: 'Movie Name', link: ''},
+      { id: (1).toString(), name: 'Movie Name', link: ''},
+      { id: (2).toString(), name: 'Movie Name', link: ''},
+      { id: (3).toString(), name: 'Movie Name', link: ''},
+      { id: (4).toString(), name: 'Movie Name', link: ''},
+      { id: (5).toString(), name: 'Movie Name', link: ''},
+      { id: (6).toString(), name: 'Movie Name', link: ''},
+      { id: (7).toString(), name: 'Movie Name', link: ''},
+      { id: (8).toString(), name: 'Movie Name', link: ''},
+      { id: (9).toString(), name: 'Movie Name', link: ''},
+      { id: (10).toString(), name: 'Movie Name', link: ''},
     ]
   
     public defaultCarrousels : carouselProps= {
