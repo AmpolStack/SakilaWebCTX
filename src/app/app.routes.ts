@@ -11,7 +11,7 @@ export const routes: Routes = [
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
     { path: 'login', component: LoginComponent},
     { path: 'home', component: MainComponent},
-    { path: 'movie', component: MovieComponent},
+    { path: 'movie/:referenceId', component: MovieComponent},
     { path: 'actor', component: ActorComponent },
     { path: 'search', component: SearchComponent},
     { path: '**', component: LandingComponent}
