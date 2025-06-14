@@ -32,7 +32,18 @@ export interface Expensefilm{
   special_features: string;
   last_update: Date;
   language: string;
-  actorsNames: string[];
+  actors: Actor[];
+  categories : MinimalCategory[]
+}
+
+export interface Actor{
+  referenceId : String;
+  name: String
+}
+
+export interface MinimalCategory{
+  referenceId : String;
+  name : String
 }
 
 export interface Minimalfilm{

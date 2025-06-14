@@ -10,47 +10,35 @@
     </div>
     <ul class="tag-container">
         <h4>tags:</h4>
-        <li>Quest</li>
-        <li>Survival</li>
-        <li>Action</li>
-        <li>Survival</li>
-        <li>Action</li>
-        <li>Survival</li>
-        <li>Action</li>
-        <li>Survival</li>
-        <li>Action</li>
-        <li>Survival</li>
-        <li>Action</li>
-        <li>Survival</li>
-        <li>Action</li>
-        <li>Survival</li>
-        <li>Action</li>
-        <li>Survival</li>
-        <li>Action</li>
-        <li>Survival</li>
-        <li>Action</li>
+        @for (item of movie()?.categories; track item.referenceId) {
+            <li>{{item.name}}</li>
+        }
     </ul>
     <div class="char-container">
-        <p>Release year: {{ this.movie()?.release_year }}</p>
-        <p>Duration: {{ this.movie()?.length }} minutes</p>
-        <p>Language: {{ this.movie()?.language}}</p>
-        <p>Rating: {{ this.movie()?.rating }}</p>
-                @for (item of this.movie()?.special_features?.split(','); track $index) {
-            <li>Special feature: {{item}}</li>
+        <p><span>Release year:</span> {{ this.movie()?.release_year }}</p>
+        <p><span>Duration:</span> {{ this.movie()?.length }} minutes</p>
+        <p><span>Language:</span> {{ this.movie()?.language}}</p>
+        <p><span>Rating:</span> {{ this.movie()?.rating }}</p>
+        <p>
+            <span>Special feature:</span>
+            @for (item of this.movie()?.special_features?.split(','); track $index) {
+            {{item}}
         }
+        </p>
+                
     </div>
     <button class="price-button">$1.99</button>
     <ul class="creators-container">
         <h4>Creators:</h4>
-        @for (item of this.movie()?.actorsNames; track $index) {
-            <li>{{ item.repeat(3) | titlecase }}@if($index !== $count - 1){,}
+        @for (item of this.movie()?.actors; track $index) {
+            <li>{{ item.name.repeat(3) | titlecase }}@if($index !== $count - 1){,}
             </li>
         }
     </ul>
     <ul class="actors-container">
         <h4>Actors:</h4>
-        @for (item of this.movie()?.actorsNames; track $index) {
-            <li>{{ item.repeat(3) | titlecase }}@if($index !== $count - 1){,}
+        @for (item of this.movie()?.actors; track $index) {
+            <li>{{ item.name.repeat(3) | titlecase }}@if($index !== $count - 1){,}
             </li>
         }
     </ul>

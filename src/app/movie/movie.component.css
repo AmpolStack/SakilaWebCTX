@@ -26,6 +26,11 @@ main {
     text-align: center;
 }
 
+span{
+    background-color: var(--bgPhantom);
+    font-weight: bold;
+}
+
 h1 {
     grid-area: name;
     color: var(--fntSecondary);
@@ -96,6 +101,12 @@ ul > h4 {
     flex-direction: row;
     padding: var(--spacing-md);
     max-width: 28rem;
+}
+
+
+.tag-container{
+    flex-direction: column;
+    grid-area: tags;
 }
 
 ul, .char-container {
